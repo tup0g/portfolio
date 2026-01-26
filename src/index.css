@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+/* Tailwind v4 Theme Configuration */
+@theme {
+  /* Color System */
+  --color-custom-bg: #121212;
+  --color-custom-cream: #f5f5dc;
+  --color-custom-gray: #bebebe;
+  --color-custom-accent: #8b7d6b;
+  --color-custom-card: #1e1e1e;
+  
+  /* Typography */
+  --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+  
+  /* Spacing for better rhythm */
+  --spacing-section: 5rem;
+}
+
+/* Global Base Styles */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: var(--color-custom-bg);
+    color: var(--color-custom-cream);
+    font-family: var(--font-family-sans);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+}
+
+/* Motion helpers for smooth entry */
+@layer components {
+  .fade-in-soft {
+    opacity: 0;
+    animation: fade-in-soft 0.7s ease-out forwards;
+  }
+
+  .fade-up-soft {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fade-up-soft 0.8s ease-out forwards;
+  }
+
+  .fade-up-delay-1 {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fade-up-soft 0.9s ease-out 0.08s forwards;
+  }
+
+  .fade-up-delay-2 {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fade-up-soft 1s ease-out 0.16s forwards;
+  }
+}
+
+@keyframes fade-in-soft {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade-up-soft {
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation for the waving hand рџ‘‹ */
+.wave {
+  animation-name: wave-animation;
+  animation-duration: 2.1s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 3px solid #8b7d6b;
+  animation: prixClipFix 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
