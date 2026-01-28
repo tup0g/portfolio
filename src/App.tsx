@@ -5,7 +5,9 @@ import { useEffect, useState } from 'react';
 import { Preloader } from './components/Preloader';
 import Footer from './components/layout/Footer';
 import { Route, Routes } from 'react-router-dom';
-// import Resume from '../components/sections/Resume';
+import { Projects } from './components/sections/Projects';
+import { About } from './components/sections/About';
+import { Resume } from './components/sections/Resume';
 
 function App() {
   const [load, updateLoad] = useState(true);
@@ -27,6 +29,9 @@ function App() {
       <main className="pt-24">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </main>
       <Footer />

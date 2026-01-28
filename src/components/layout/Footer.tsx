@@ -3,7 +3,7 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
-function Footer() {
+export const Footer: React.FC = () => {
   const year = new Date().getFullYear();
 
   return (

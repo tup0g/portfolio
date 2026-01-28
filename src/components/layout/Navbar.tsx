@@ -6,9 +6,11 @@ import {
   AiOutlineFileText,
 } from 'react-icons/ai';
 import { CgGitFork } from 'react-icons/cg';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   // Effect to make the header smoother when scrolling
   useEffect(() => {
@@ -21,6 +23,9 @@ export const Navbar: React.FC = () => {
 
   const navItemStyle =
     'flex items-center gap-2 text-custom-cream hover:text-custom-accent transition-all duration-300 px-4 py-2 font-medium text-base group relative';
+  
+  const activeNavItemStyle =
+    'flex items-center gap-2 text-custom-accent transition-all duration-300 px-4 py-2 font-medium text-base group relative';
 
   // Underline on hover
   const underlineStyle =
@@ -30,41 +35,44 @@ export const Navbar: React.FC = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${
         scrolled
-          ? 'bg-[#121212]/70 backdrop-blur-md border-b border-custom-card/60 shadow-xl shadow-custom-accent/10 py-3'
+          ? 'bg-custom-bg/70 backdrop-blur-md border-b border-custom-card/60 shadow-xl shadow-custom-accent/10 py-3'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 gap-6">
         {/* Logo */}
-        <div className="text-custom-cream text-3xl font-bold tracking-tight hover:text-custom-accent transition-colors duration-300 cursor-pointer">
+        <button 
+          onClick={() => navigate('/')}
+          className="text-custom-cream text-3xl font-bold tracking-tight hover:text-custom-accent transition-colors duration-300 cursor-pointer"
+        >
           <span className="text-custom-accent">Sk</span>.
-        </div>
+        </button>
 
         {/* Menu */}
         <div className="hidden flex-1 items-center justify-center gap-4 md:flex">
-          <a href="#" className={navItemStyle}>
+          <NavLink to="/" className={({ isActive }) => isActive ? activeNavItemStyle : navItemStyle}>
             <AiOutlineHome className="text-xl" />
             <span>Home</span>
             <span className={underlineStyle}></span>
-          </a>
+          </NavLink>
 
-          <a href="#about" className={navItemStyle}>
+          <NavLink to="/about" className={({ isActive }) => isActive ? activeNavItemStyle : navItemStyle}>
             <AiOutlineUser className="text-xl" />
             <span>About</span>
             <span className={underlineStyle}></span>
-          </a>
+          </NavLink>
 
-          <a href="#projects" className={navItemStyle}>
+          <NavLink to="/projects" className={({ isActive }) => isActive ? activeNavItemStyle : navItemStyle}>
             <AiOutlineFundProjectionScreen className="text-xl" />
             <span>Projects</span>
             <span className={underlineStyle}></span>
-          </a>
+          </NavLink>
 
-          <a href="#resume" className={navItemStyle}>
+          <NavLink to="/resume" className={({ isActive }) => isActive ? activeNavItemStyle : navItemStyle}>
             <AiOutlineFileText className="text-xl" />
             <span>Resume</span>
             <span className={underlineStyle}></span>
-          </a>
+          </NavLink>
         </div>
 
         {/* GitHub Button */}
