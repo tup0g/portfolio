@@ -1,14 +1,44 @@
+import React from "react";
+import ProjectCards from "../ProjectCards"; // Переконайтесь, що шлях вірний
+import { projectsData } from "../../data/ProjectsData"; // Переконайтесь, що шлях вірний
+
 export const Projects: React.FC = () => {
   return (
-        <section className="relative flex min-h-screen items-center justify-center overflow-hidden py-16 fade-in-soft">
-      <div className="relative z-10 mx-auto max-w-5xl px-6">
-        <h1 className="text-custom-cream text-5xl font-extrabold mb-8">
-          Projects <span className="text-custom-accent">Portfolio</span>
-        </h1>
-        <p className="text-custom-gray text-lg leading-relaxed">
-          Projects page content coming soon...
-        </p>
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#121212] py-24 px-6" id="projects">
+      
+      {/* Background gradient blobs (для краси і глибини) */}
+      <div className="pointer-events-none absolute top-20 right-0 z-0 h-[400px] w-[400px] rounded-full bg-custom-accent/10 blur-[100px]"></div>
+      <div className="pointer-events-none absolute bottom-20 left-0 z-0 h-[400px] w-[400px] rounded-full bg-custom-accent/5 blur-[100px]"></div>
+
+      <div className="relative z-10 mx-auto max-w-7xl">
+        
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <h1 className="text-4xl font-extrabold text-custom-cream md:text-5xl">
+            My Recent <span className="text-custom-accent">Works</span>
+          </h1>
+          <p className="mt-4 text-custom-gray text-lg">
+            Here are a few projects I've worked on recently.
+          </p>
+        </div>
+
+        {/* Grid Layout замість Row/Col */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projectsData.map((project) => (
+            <div key={project.id} className="h-full">
+              <ProjectCards
+                imgPath={project.imgPath}
+                title={project.title}
+                description={project.description}
+                ghLink={project.ghLink}
+                isBlog={project.isBlog}
+                demoLink={project.demoLink}
+              />
+            </div>
+          ))}
+        </div>
+        
       </div>
     </section>
   );
-}
+};
