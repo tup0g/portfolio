@@ -4,11 +4,11 @@ import { projectsData } from "./projects/ProjectsData"; // Переконайт�
 
 export const Projects: React.FC = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#121212] py-24 px-6" id="projects">
+    <section className="relative min-h-screen w-full overflow-hidden bg-custom-bg py-24 px-6" id="projects">
       
       {/* Background gradient blobs (для краси і глибини) */}
-      <div className="pointer-events-none absolute top-20 right-0 z-0 h-[400px] w-[400px] rounded-full bg-custom-accent/10 blur-[100px]"></div>
-      <div className="pointer-events-none absolute bottom-20 left-0 z-0 h-[400px] w-[400px] rounded-full bg-custom-accent/5 blur-[100px]"></div>
+      <div className="pointer-events-none absolute top-20 right-0 z-0 h-100 w-100 rounded-full bg-custom-accent/10 blur-[100px]"></div>
+      <div className="pointer-events-none absolute bottom-20 left-0 z-0 h-100 w-100 rounded-full bg-custom-accent/5 blur-[100px]"></div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
         

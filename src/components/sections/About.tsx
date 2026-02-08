@@ -8,11 +8,11 @@ import laptopImg from "../../assets/laptopImg.png";
 
 export const About: React.FC = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#121212] py-24 px-6 fade-in-soft" id="about">
+    <section className="relative min-h-screen w-full overflow-hidden bg-custom-bg py-24 px-6 fade-in-soft" id="about">
       
       {/* Background Blobs */}
-      <div className="pointer-events-none absolute top-0 left-0 z-0 h-[500px] w-[500px] rounded-full bg-custom-accent/10 blur-[120px]"></div>
-      <div className="pointer-events-none absolute bottom-0 right-0 z-0 h-[500px] w-[500px] rounded-full bg-custom-accent/5 blur-[120px]"></div>
+      <div className="pointer-events-none absolute top-0 left-0 z-0 h-125 w-125 rounded-full bg-custom-accent/10 blur-[120px]"></div>
+      <div className="pointer-events-none absolute bottom-0 right-0 z-0 h-125 w-125 rounded-full bg-custom-accent/5 blur-[120px]"></div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
         
@@ -31,7 +31,7 @@ export const About: React.FC = () => {
             <img 
               src={laptopImg} 
               alt="about" 
-              className="max-w-[80%] md:max-w-[400px] lg:max-w-full drop-shadow-[0_0_20px_rgba(139,125,107,0.3)] animate-float"
+              className="max-w-[80%] md:max-w-100 lg:max-w-full drop-shadow-[0_0_20px_rgba(139,125,107,0.3)] animate-float"
             />
           </div>
         </div>

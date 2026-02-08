@@ -3,7 +3,6 @@ import {
   AiOutlineHome,
   AiOutlineUser,
   AiOutlineFundProjectionScreen,
-  AiOutlineFileText,
 } from 'react-icons/ai';
 import { CgGitFork } from 'react-icons/cg';
 import { NavLink, useNavigate } from 'react-router-dom';

@@ -1,9 +1,8 @@
-import React from "react";
 import { ImPointRight } from "react-icons/im";
 
 function AboutCard() {
   return (
-    <div className="h-full w-full rounded-2xl bg-[#1e1e1e]/50 border border-gray-800 p-8 shadow-xl backdrop-blur-sm transition-all hover:border-custom-accent/30">
+    <div className="h-full w-full rounded-2xl bg-custom-card/50 border border-gray-800 p-8 shadow-xl backdrop-blur-sm transition-all hover:border-custom-accent/30">
       <blockquote className="relative text-lg text-custom-gray">
         <p className="mb-6 text-justify leading-relaxed">
           Hi Everyone, I am <span className="font-bold text-custom-accent">Mykhailo Skrypkovskyi</span>

@@ -7,7 +7,7 @@ function Github() {
         Days I <span className="text-custom-accent">Code</span>
       </h1>
       
-      <div className="rounded-xl border border-custom-accent/20 bg-[#1e1e1e] p-6 shadow-lg hover:border-custom-accent/50 transition-colors">
+      <div className="rounded-xl border border-custom-accent/20 bg-custom-card p-6 shadow-lg hover:border-custom-accent/50 transition-colors">
         <GitHubCalendar
           username="tup0g" // Твій нікнейм
           blockSize={15}
