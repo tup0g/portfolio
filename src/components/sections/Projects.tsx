@@ -1,6 +1,6 @@
 import React from "react";
-import ProjectCards from "./projects/ProjectCards"; // Переконайтесь, що шлях вірний
-import { projectsData } from "./projects/ProjectsData"; // Переконайтесь, що шлях вірний
+import ProjectCards from "./projects/ProjectCards"; 
+import { projectsData } from "./projects/ProjectsData"; 
 
 export const Projects: React.FC = () => {
   return (
