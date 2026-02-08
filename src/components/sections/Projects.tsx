@@ -1,6 +1,6 @@
 import React from "react";
-import ProjectCards from "../ProjectCards"; // Переконайтесь, що шлях вірний
-import { projectsData } from "../../data/ProjectsData"; // Переконайтесь, що шлях вірний
+import ProjectCards from "./projects/ProjectCards"; // Переконайтесь, що шлях вірний
+import { projectsData } from "./projects/ProjectsData"; // Переконайтесь, що шлях вірний
 
 export const Projects: React.FC = () => {
   return (
@@ -23,9 +23,9 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Grid Layout замість Row/Col */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-8">
           {projectsData.map((project) => (
-            <div key={project.id} className="h-full">
+            <div key={project.id} className="h-full" style={{ flex: '0 0 calc(33.333% - 1.5rem)', minWidth: '280px', maxWidth: '350px' }}>
               <ProjectCards
                 imgPath={project.imgPath}
                 title={project.title}

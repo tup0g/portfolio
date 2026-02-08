@@ -103,7 +103,7 @@ export const Home: React.FC = () => {
             </a>
 
             <a
-              href="#contact"
+              href="https://t.me/tup_og"
               className="group relative overflow-hidden bg-custom-accent text-custom-bg hover:text-custom-bg flex items-center justify-center gap-3 rounded-xl px-8 py-4 font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-custom-cream/20"
             >
               <span className="absolute inset-0 bg-custom-cream translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>

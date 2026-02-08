@@ -1,0 +1,28 @@
+import React from "react";
+import { SiMacos, SiVsco, SiPostman, SiSlack, SiFigma } from "react-icons/si";
+import { VscTerminal } from "react-icons/vsc";
+
+function Toolstack() {
+  const tools = [
+    { icon: <SiMacos />, name: "macOS" },
+    { icon: <VscTerminal />, name: "Terminal" },
+  ];
+
+  return (
+    <div className="grid grid-cols-2 gap-4 pb-12 md:grid-cols-3 lg:grid-cols-6">
+      {tools.map((item, index) => (
+        <div
+          key={index}
+          className="group flex flex-col items-center justify-center gap-2 rounded-xl border border-custom-accent/20 bg-[#1e1e1e] py-8 text-4xl text-custom-gray transition-all duration-300 hover:scale-110 hover:border-custom-accent hover:text-custom-accent hover:shadow-[0_0_15px_rgba(139,125,107,0.3)]"
+        >
+          {item.icon}
+          <span className="text-xs opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            {item.name}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Toolstack;

@@ -14,15 +14,15 @@ function ProjectCards(props: ProjectCardProps) {
   return (
     <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-custom-card border border-gray-800 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-custom-accent/50 hover:shadow-custom-accent/20">
       
-      {/* Container for Image with overflow hidden */}
+      {/* Container for Image */}
       <div className="relative h-48 w-full overflow-hidden">
         <img
           src={props.imgPath}
           alt="card-img"
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="h-full w-full object-cover object-top transition-all duration-2000 ease-in-out group-hover:object-bottom"
         />
-        {/* Overlay effect on hover */}
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-300"></div>
+        {/* Overlay effect */}
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-300"></div>
       </div>
 
       <div className="flex flex-1 flex-col p-6">

@@ -42,7 +42,10 @@ export const Navbar: React.FC = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 gap-6">
         {/* Logo */}
         <button 
-          onClick={() => navigate('/')}
+          onClick={() => {
+            navigate('/');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           className="text-custom-cream text-3xl font-bold tracking-tight hover:text-custom-accent transition-colors duration-300 cursor-pointer"
         >
           <span className="text-custom-accent">Sk</span>.
@@ -65,12 +68,6 @@ export const Navbar: React.FC = () => {
           <NavLink to="/projects" className={({ isActive }) => isActive ? activeNavItemStyle : navItemStyle}>
             <AiOutlineFundProjectionScreen className="text-xl" />
             <span>Projects</span>
-            <span className={underlineStyle}></span>
-          </NavLink>
-
-          <NavLink to="/resume" className={({ isActive }) => isActive ? activeNavItemStyle : navItemStyle}>
-            <AiOutlineFileText className="text-xl" />
-            <span>Resume</span>
             <span className={underlineStyle}></span>
           </NavLink>
         </div>
